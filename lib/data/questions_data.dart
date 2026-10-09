@@ -1,0 +1,110 @@
+import 'package:flutter/material.dart';
+import 'question.dart';
+
+class QuestionsData {
+  static List<Question> randomSet(int count) =>
+      ([..._all]..shuffle()).take(count).map((q) => q.withShuffledOptions()).toList();
+
+  static const _all = <Question>[
+    // ── WHO AM I ──
+
+    Question(QType.whoAmI, 'Who am I?',
+        ['Mohamed Salah', 'Sadio Mané', 'Riyad Mahrez', 'Mohamed Elneny'], 'Mohamed Salah',
+        clues: [
+          'I was born in Nagrig, Egypt.',
+          'I played for Basel, Chelsea, Fiorentina and Roma.',
+          'I have won the Premier League Golden Boot several times.',
+          'Fans call me "The Egyptian King" at Anfield.',
+        ]),
+    Question(QType.whoAmI, 'Who am I?',
+        ['Lionel Messi', 'Neymar', 'Ángel Di María', 'Paulo Dybala'], 'Lionel Messi',
+        clues: [
+          'I was born in Rosario, Argentina.',
+          'I moved to Barcelona\'s academy at 13.',
+          'I won 8 Ballon d\'Or awards.',
+          'I lifted the World Cup in Qatar 2022.',
+        ]),
+    Question(QType.whoAmI, 'Who am I?',
+        ['Cristiano Ronaldo', 'Luís Figo', 'Rui Costa', 'Bruno Fernandes'],
+        'Cristiano Ronaldo',
+        clues: [
+          'I was born in Funchal, Madeira.',
+          'I won the Champions League with Man United and Real Madrid.',
+          'I captained my country to Euro 2016.',
+          'I am the top scorer in international football history.',
+        ]),
+    Question(QType.whoAmI, 'Who am I?',
+        ['Mohamed Salah', 'Sadio Mané', 'Riyad Mahrez', 'Mohamed Elneny'],
+        'Mohamed Salah',
+        clues: [
+          'I was born in Nagrig, Egypt.',
+          'I played for Basel, Chelsea, Fiorentina and Roma.',
+          'I have won the Premier League Golden Boot several times.',
+          'Fans call me "The Egyptian King" at Anfield.',
+        ]),
+    Question(QType.whoAmI, 'Who am I?',
+        ['Zinedine Zidane', 'Thierry Henry', 'Patrick Vieira', 'Michel Platini'],
+        'Zinedine Zidane',
+        clues: [
+          'I was born in Marseille to Algerian parents.',
+          'I wore the number 5 for Juventus and Real Madrid.',
+          'I scored two headers in the 1998 World Cup final.',
+          'I coached Real Madrid to three straight Champions League titles.',
+        ]),
+    Question(QType.whoAmI, 'Who am I?',
+        ['Kylian Mbappé', 'Karim Benzema', 'Antoine Griezmann', 'Ousmane Dembélé'],
+        'Kylian Mbappé',
+        clues: [
+          'I grew up in Bondy, near Paris.',
+          'I started my career at AS Monaco.',
+          'I scored a hat-trick in a World Cup final.',
+          'I joined Real Madrid after leaving PSG.',
+        ]),
+    // ── GENERAL ──
+    
+Question(QType.general,'who won the 2006 FIFA World Cup?', ['Italy','England' , 'France', 'Brazil'], 'Italy'),
+    Question(QType.general, 'Which country has won the most FIFA World Cups?',
+        ['Germany', 'Italy', 'Brazil', 'Argentina'], 'Brazil'),
+    Question(QType.general, 'Who won the very first FIFA World Cup in 1930?',
+        ['Brazil', 'Uruguay', 'Argentina', 'Italy'], 'Uruguay'),
+    Question(QType.general, 'Which club has won the most Champions League titles?',
+        ['AC Milan', 'Bayern Munich', 'Real Madrid', 'Liverpool'], 'Real Madrid'),
+    Question(QType.general, 'Who is the Premier League\'s all-time top scorer?',
+        ['Wayne Rooney', 'Alan Shearer', 'Harry Kane', 'Thierry Henry'], 'Alan Shearer'),
+    Question(QType.general, 'Which country hosted the 2022 World Cup?',
+        ['Russia', 'Qatar', 'UAE', 'Saudi Arabia'], 'Qatar'),
+    Question(QType.general, 'Which team went unbeaten in the 2003-04 Premier League?',
+        ['Chelsea', 'Man United', 'Arsenal', 'Liverpool'], 'Arsenal'),
+    Question(QType.general, 'What do you call three goals by one player in a match?',
+        ['Brace', 'Hat-trick', 'Poker', 'Treble'], 'Hat-trick'),
+    // ── GUESS THE CLUB ──
+    Question(QType.club, 'Guess the club!',
+        ['Real Madrid', 'Atlético Madrid', 'Sevilla', 'Valencia'], 'Real Madrid',
+        colors: [Color(0xFF00529F), Color(0xFFFFFFFF)],
+        clues: ['Stadium: Santiago Bernabéu', 'City: Madrid', 'Nickname: Los Blancos']),
+    Question(QType.club, 'Guess the club!',
+        ['FC Barcelona', 'Valencia', 'Sevilla', 'Villarreal'], 'FC Barcelona',
+        colors: [Color(0xFF004D98), Color(0xFFA50044)],
+        clues: ['Nickname: Blaugrana', 'City: Barcelona', 'Motto: Més que un club']),
+    Question(QType.club, 'Guess the club!',
+        ['Man United', 'Liverpool', 'Arsenal', 'Nottingham Forest'], 'Liverpool',
+        colors: [Color(0xFFC8102E), Color(0xFFF6EB61)],
+        clues: ['Stadium: Anfield', 'Anthem: You\'ll Never Walk Alone', 'Nickname: The Reds']),
+    Question(QType.club, 'Guess the club!',
+        ['Al Ahly', 'Zamalek', 'Pyramids FC', 'Al Masry'], 'Al Ahly',
+        colors: [Color(0xFFD50000), Color(0xFFFFFFFF)],
+        clues: ['City: Cairo', 'Nickname: The Red Devils', 'Most CAF Champions League titles']),
+    Question(QType.club, 'Guess the club!',
+        ['Bayern Munich', 'Schalke', 'Leverkusen', 'RB Leipzig'], 'Bayern Munich',
+        colors: [Color(0xFFDC052D), Color(0xFF0066B2)],
+        clues: ['Stadium: Allianz Arena', 'City: Munich', 'Nickname: Die Roten']),
+    Question(QType.club, 'Guess the club!',
+        ['Dortmund', 'Wolfsburg', 'Hoffenheim', 'Frankfurt'], 'Dortmund',
+        colors: [Color(0xFFFDE100), Color(0xFF000000)],
+        clues: ['Stadium: Signal Iduna Park', 'Famous "Yellow Wall"', 'Nickname: Die Schwarzgelben']),
+    Question(QType.club, 'Guess the club!',
+        ['Inter Milan', 'AC Milan', 'Juventus', 'Napoli'], 'Juventus',
+        colors: [Color(0xFF000000), Color(0xFFFFFFFF)],
+        clues: ['City: Turin', 'Nickname: La Vecchia Signora', 'Black and white stripes']),
+  ];
+}
